@@ -61,10 +61,7 @@ async function main() {
   const attachments = [
     {
       color: (jobCount === jobSuccessCount) ? '#27a658' : '#ff5655',
-      text: `*${actor}*'s \`${eventName}\` sur la branche \`${branch}\` de <${repoUrl}|${owner}/${repo}>\n_<${repoUrl}/actions/runs/${runId},|${workflow} (#${runNumber})>_ terminé en \`${duration}\` avec le status *${status}*`,
-      author_name: actor,
-      author_icon: actorAvatar,
-      author_link: `https://github.com/${actor}`,
+      text: `*${actor}*'s \`${eventName}\` sur la branche \`${branch}\` de <${repoUrl}|${owner}/${repo}>\n_<${repoUrl}/actions/runs/${runId},|${workflow} (#${runNumber})>_ terminé en \`${duration}\` avec le status *${status}*\n${(deploymentUrl) ? `[Voir le déploiement](${deploymentUrl})` : null}`,
       fields: [
         {
           short: false,
@@ -72,11 +69,10 @@ async function main() {
         },
         ...makeJobReport(jobs),
       ],
-      footer: (deploymentUrl) ? `[Voir le déploiement](${deploymentUrl})` : null,
     },
   ];
   const body = {
-    icon_emoji: ':gitbeer:', username: 'GithubActions', channel, attachments,
+    icon_url: actorAvatar, username: 'GithubActions', channel, attachments,
   };
   await fetch(mmWebhookUrl, {
     method: 'POST',
