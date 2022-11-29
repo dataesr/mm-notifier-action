@@ -4,9 +4,6 @@
   "description": "This action allows to send a message in Mattermost channels in a github actions pipeline.",
   "main": "index.js",
   "type": "module",
-  "scripts": {
-    "build": "ncc build src/action.js -o dist"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dataesr/mm-notifier-action.git"
@@ -27,7 +24,6 @@
     "node-fetch": "^3.3.0"
   },
   "devDependencies": {
-    "@vercel/ncc": "^0.34.0",
     "eslint": "^8.28.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-plugin-import": "^2.26.0"
