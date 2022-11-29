@@ -2,7 +2,7 @@
   "name": "mm-notifier-action",
   "version": "0.0.1",
   "description": "This action allows to send a message in Mattermost channels in a github actions pipeline.",
-  "main": "dist/index.js",
+  "main": "index.js",
   "scripts": {
     "build": "ncc build src/action.js -o dist"
   },
