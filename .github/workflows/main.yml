@@ -1,0 +1,29 @@
+name: Production deployment
+on: [push]
+
+jobs:
+  hello_job1:
+    runs-on: ubuntu-latest
+    name: A job to say hello 1
+    steps:
+      - run: echo 'hello'
+  hello_job2:
+    runs-on: ubuntu-latest
+    name: A job to say hello 2
+    steps:
+      - run: echo 'hello'
+  
+  notify:
+    needs:
+      - hello_job1
+      - hello_job2
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ./
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN}}
+          mattermost_token: ${{ secrets.SLACK_TOKEN }}
+          mattermost_channel: '#github-tests'
+          deployment_url: 'scanr.staging.dataesr.ovh'
