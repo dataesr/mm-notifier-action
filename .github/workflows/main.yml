@@ -24,6 +24,6 @@ jobs:
       - uses: ./
         with:
           github_token: ${{ secrets.GITHUB_TOKEN}}
-          mattermost_token: ${{ secrets.SLACK_TOKEN }}
-          mattermost_channel: '#github-tests'
-          deployment_url: 'scanr.staging.dataesr.ovh'
+          mattermost_token: ${{ secrets.MATTERMOST_WEBHOOK_URL }}
+          mattermost_channel: 'paysage-bot'
+          deployment_url: 'https://paysage.staging.dataesr.ovh'
