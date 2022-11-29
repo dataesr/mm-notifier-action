@@ -6,10 +6,9 @@ This actions allows to send a message in Mattermost channels in a github actions
 | Name | Required | Description |
 | ---- | -------- | ----------- |
 | **github_token** | _required_ | Your github token. Usually use `${{ secrets.GITHUB_TOKEN }}`.
-| **mattermost_token** | _required_ | Your slack bot token. Set it as a secret and use it as `${{ secrets.SLACK_TOKEN }}`
-| **channel** | _required_ | A slack channel to publish the message.
-| **report_jobs** | _optional_ | If `true`, reports the status of all jobs. **Default**: `true`
-| **deployment_url** | _optional_ | If provided, adds a button that links to an app deployment. **Default**: ""
+| **mattermost_webhook_url** | _required_ | Your webhook url. Set it as a secret and use it as `${{ secrets.MATTERMOST_WEBHOOK_URL }}`
+| **mattermost_channel** | _required_ | A mattermost channel to publish the message.
+| **deployment_url** | _optional_ | If provided, adds a link to an app deployment. **Default**: ""
 *Only printed if workflow is successfull*
 
 ## Usage
@@ -40,9 +39,7 @@ jobs:
       - uses: dataesr/mm-notifier-action@v1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN}}
-          mattermost_token: ${{ secrets.SLACK_TOKEN }}
-          channel: '<mattermost-channel>'
+          mattermost_webhook_url: ${{ secrets.MATTERMOST_WEBHOOK_URL }}
+          mattermost_channel: '<mattermost-channel>'
           deployment_url: '<your-app-url>'
 ```
-<!-- Output message:
-<img src="./img/example.png" title="Slack Example"> -->
