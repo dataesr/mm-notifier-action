@@ -1,0 +1,21 @@
+name: 'Mattermost notifier action'
+description: 'Notify Github Actions workflows results in Mattermost.'
+author: '[folland87]'
+inputs:
+  github_token: 
+    description: 'Github token'
+    required: true
+  mattermost_webhook_url: 
+    description: 'Your webhook url'
+    required: true
+  mattermost_channel:
+    description: 'Channel to publish to'
+    required: true
+  deployment_url:
+    description: 'A link to visit a deployment'
+    required: false
+    default: ''
+
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
