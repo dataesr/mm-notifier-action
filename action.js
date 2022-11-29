@@ -25,7 +25,7 @@ export function makeJobReport(jobs) {
     const start = new Date(job.started_at);
     const end = new Date(job.completed_at);
     return {
-      text: `${emoji} ${job.name} (${getDuration(start, end)})`,
+      value: `${emoji} ${job.name} (${getDuration(start, end)})`,
       short: true,
     };
   });
@@ -72,7 +72,7 @@ async function main() {
         },
         ...makeJobReport(jobs),
       ],
-      footer: (deploymentUrl) ? `<${deploymentUrl}|Voir le déploiement>` : null,
+      footer: (deploymentUrl) ? `[Voir le déploiement](${deploymentUrl})` : null,
     },
   ];
   const body = {
