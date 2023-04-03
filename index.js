@@ -61,7 +61,7 @@ async function main() {
   const attachments = [
     {
       color: (jobCount === jobSuccessCount) ? '#27a658' : '#ff5655',
-      text: `*${actor}*'s \`${eventName}\` sur la branche \`${branch}\` de <${repoUrl}|${owner}/${repo}>\n_<${repoUrl}/actions/runs/${runId},|${workflow} (#${runNumber})>_ terminé en \`${duration}\` avec le status *${status}*\n${(deploymentUrl) ? `[Voir le déploiement](${deploymentUrl})` : null}`,
+      text: `*${actor}*'s \`${eventName}\` sur la branche \`${branch}\` de <${repoUrl}|${owner}/${repo}>\n_<${repoUrl}/actions/runs/${runId}|${workflow} (#${runNumber})>_ terminé en \`${duration}\` avec le status *${status}*\n${(deploymentUrl) ? `[Voir le déploiement](${deploymentUrl})` : null}`,
       fields: [
         {
           short: false,
