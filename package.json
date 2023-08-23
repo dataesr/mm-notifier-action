@@ -1,7 +1,7 @@
 {
   "name": "mm-notifier-action",
   "version": "1.0.0",
-  "description": "This action allows to send a message in Mattermost channels in a github actions pipeline.",
+  "description": "This action allows to send a message in a Mattermost channel in a github action pipeline.",
   "main": "index.js",
   "type": "module",
   "repository": {

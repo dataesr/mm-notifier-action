@@ -1,5 +1,5 @@
 # mm-notifier-action
-This actions allows to send a message in Mattermost channels in a github actions pipeline. It uses github workflow context to display a formatted message on a selected slack channel.
+This actions allows to send a message in a Mattermost channel in a github action pipeline. It uses github workflow context to display a formatted message on a selected Mattermost channel.
 
 ## Inputs
 
@@ -38,8 +38,8 @@ jobs:
       - uses: actions/checkout@v2
       - uses: dataesr/mm-notifier-action@v1
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN}}
-          mattermost_webhook_url: ${{ secrets.MATTERMOST_WEBHOOK_URL }}
-          mattermost_channel: '<mattermost-channel>'
           deployment_url: '<your-app-url>'
+          github_token: ${{ secrets.GITHUB_TOKEN}}
+          mattermost_channel: '<mattermost-channel>'
+          mattermost_webhook_url: ${{ secrets.MATTERMOST_WEBHOOK_URL }}
 ```
