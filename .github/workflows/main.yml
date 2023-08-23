@@ -21,6 +21,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Build client
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - run: npm ci --silent
       - uses: ./
         with:
           github_token: ${{ secrets.GITHUB_TOKEN}}
