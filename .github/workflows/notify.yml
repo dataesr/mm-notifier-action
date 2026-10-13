@@ -1,9 +1,9 @@
-name: Production deployment
+name: Notify on Mattermost
 on: [push]
 
 jobs:
   notify:
-    if: always()
+    name: 📢 Notify on Mattermost
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
