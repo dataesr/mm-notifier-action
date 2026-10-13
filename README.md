@@ -48,7 +48,7 @@ jobs:
 
 The version number follows [semver](https://semver.org/).
 
-To deploy in production, simply run this command from your staging branch :
+To deploy in production, simply run this command :
 
 `npm run deploy -- [patch|minor|major]`
 
