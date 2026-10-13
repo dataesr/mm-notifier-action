@@ -27,5 +27,10 @@
     "eslint": "^8.28.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-plugin-import": "^2.26.0"
+  },
+  "scripts": {
+    "predeploy": "git switch main && git pull origin main --rebase --tags && git merge origin staging",
+    "deploy": "npm version",
+    "postdeploy": "git push origin main --tags && git switch staging && git merge origin main && git push"
   }
 }
