@@ -43,3 +43,13 @@ jobs:
           mattermost_channel: '<mattermost-channel>'
           mattermost_webhook_url: ${{ secrets.MATTERMOST_WEBHOOK_URL }}
 ```
+
+## Deployment
+
+The version number follows [semver](https://semver.org/).
+
+To deploy in production, simply run this command from your staging branch :
+
+`npm run deploy -- [patch|minor|major]`
+
+⚠️ Obviously, only members of the [dataesr organization](https://github.com/dataesr/) have rights to push on the repo.
